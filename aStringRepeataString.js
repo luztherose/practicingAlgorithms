@@ -4,14 +4,21 @@ Repeat a given string str (first argument) for num times (second argument). Retu
 */
 
 function repeatStringNumTimes(str, num) {
-    // store the first argument 
+    // create an empty array to hold the repeated string
+    // create an if else statement to validate the second argument
     // Repeat the first argument many times as the second argument indicates
     // return a new string with the repeated first argument
     // if the second argument is a negative number return an empty string
-    let repeatedString = str.length;
-    repeatedString *= num;
-    console.log(repeatedString)
-    return str;
+    let newRepeatedString = [];
+    if (num > 0) {
+        for(let i = 0; i < num; i++) {
+            newRepeatedString.push(str);
+        }
+        return newRepeatedString.join("");
+    } else {
+        return "";
+    }
+
 }
 
 repeatStringNumTimes("abc", 3);
