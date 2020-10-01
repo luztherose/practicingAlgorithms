@@ -9,21 +9,7 @@
 
 
 let searchMostCommonString = (arr) => {
-    // let countMax = 0;
-    // let countMin = 0;
-    for(let i = 0; i < arr.length; i++) {
-        console.log(arr[i])
-        // mostPopular = arr[i];
-        // if(arr[i] === ) {
-        //     countMax += 1;
-        //     countMin += 1;
-        // }
-    }
-    // if(countMax > countMin) {
-    //     return countMax + " max"; 
-    // } else {
-    //     return countMin + " min"; 
-    // }
+    
 }
 
 searchMostCommonString(["dog", "dog", "cat", "cat", "cat"])
