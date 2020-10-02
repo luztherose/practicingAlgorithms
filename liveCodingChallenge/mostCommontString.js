@@ -9,7 +9,16 @@
 
 
 let searchMostCommonString = (arr) => {
-    
+        const result = arr.reduce((obj, item) => {
+            console.log(obj);
+            console.log(item)
+            if(!obj[item]) {
+                obj[item] = 0;
+            }
+            obj[item]++;
+            return obj;
+    }, {});
+    return result;
 }
 
 searchMostCommonString(["dog", "dog", "cat", "cat", "cat"])
