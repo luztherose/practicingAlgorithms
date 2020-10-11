@@ -9,17 +9,31 @@ function smallestCommons(arr) {
     // determine sequential numbers in the range between these parameters
     // find the smallest multiple
     // the smallest multiple must be evenly divisible by all numbers between min and the max number
+
     const maxNum = Math.max(...arr);
     const minNum = Math.min(...arr);
     const sequentialNumbers = [];
-    for (let i = minNum + 1; i < maxNum; i++) {
+
+    for (let i = minNum; i <= maxNum; i++) {
         sequentialNumbers.push(i);
     }
     console.log(sequentialNumbers)
+    let number = 1;
 
-    return arr;
+    while (true) {
+        const isEven = sequentialNumbers.every(num => {
+            // console.log(`${number} % ${num} = ${number % num}  `)
+            return number % num === 0;
+        });
+        if (isEven) {
+            return number;
+        } else {
+            number += 1;
+        }
+    }
+
+
+    console.log(sequentialNumbers);
+
 }
-// a num that can be multiply by 
-
-
-smallestCommons([1, 5]);
+console.log(smallestCommons([1, 5]));
