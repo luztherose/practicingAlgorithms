@@ -24,7 +24,7 @@ function mutation(arr) {
         for(let k = 0; k < firstString.length; k++ ) {
             // console.log(`secString[${i}] ${secString[i]} firstString[${k}] ${firstString[k]}`)
             if(secString[i] == firstString[k]) {
-                console.log(`composedString.push`)
+                //console.log(`composedString.push`)
                 composedString.push(secString[i]);
 
                 continue outer;
