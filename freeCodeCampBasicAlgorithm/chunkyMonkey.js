@@ -9,9 +9,8 @@ function chunkArrayInGroups(arr, size) {
     // each group should be and array
     // return the arrays as a two-dimensional array.
     let count = 0;
-    let arrLength = arr.length;
     let twoDimentionalArray = [];
-    for(let i = 0; i < arrLength; i++) {
+    for(let i = 0; i < arr.length; i++) {
         if (count < size) {
             twoDimentionalArray.push(arr.splice(0, size));
             if(arr.length === 0) {
