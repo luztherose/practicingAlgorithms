@@ -9,12 +9,11 @@ function titleCase(str) {
     // capitalize connecting words after each space
     // return the provided string with the first letter of each word capitalized
     
-    let inputString = [...str.toLowerCase().split(" ")];
+    let inputString = str.toLowerCase().split(" ");
     let capitalizedString = [];
     for(let i = 0; i < inputString.length; i++) {
-        let firstLetter = inputString[i].charAt(0)
-        let capitalizedLetter = firstLetter.toUpperCase();
-        capitalizedString.push(inputString[i].replace(firstLetter, capitalizedLetter ))
+        let firstLetter = inputString[i].charAt(0);
+        capitalizedString.push(inputString[i].replace(firstLetter, firstLetter.toUpperCase()))
     }
     return capitalizedString.join(" ");
 }
