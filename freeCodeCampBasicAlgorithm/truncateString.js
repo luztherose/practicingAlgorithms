@@ -10,14 +10,11 @@ function truncateString(str, num) {
     // return that new string
     // if the string (first argument) is not longer than the 2nd argument  return first str
 
-    if(str.length > num) {
-        let endingString = "...";
+    if( num < str.length) {
         let truncatedString = str.slice(0, num);
-        return truncatedString + endingString
+        return truncatedString + "..."
     } else {
-        if(num === str.length || num > str.length) {
             return str;
-        }
     }
 }
 
