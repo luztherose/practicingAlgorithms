@@ -4,25 +4,12 @@
 
 const isPalindrome = function(x) {
   let inputArray = x.toString().split("");
-  let reverseInputArray = x.toString().split("").reverse();;
-  let countArray = [];
-  if(x < 0) {
-    return false;
-  }else {
-    outer:for(let i = 0; i < inputArray.length; i++) {
-      for(let k = i; k < reverseInputArray.length; k++) {
-        if(inputArray[i] === reverseInputArray[k]) {
-            countArray.push(inputArray[i]);
-      }
-      continue outer;
-    }
-    
-  }
-  if (countArray.length === inputArray.length) {
-      return true;
-    } else {
+  let reversedInputArray = [...inputArray].reverse();
+
+  if (x < 0) {
       return false;
-    }
+  } else {
+      return inputArray.every((item, index) => item === reversedInputArray[index])
   }
 };
 isPalindrome(120030221)
