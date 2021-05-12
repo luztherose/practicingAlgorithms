@@ -37,19 +37,21 @@ const romanToInt = function(s) {
     let arrStr = s.split("");
     let position;
     let nextPosition;
-    let excepArray = [];
     outer:for (let i = 0; i < arrStr.length; i++) {
       position = arrStr[i];
-      for (let k = i+1; k < arrStr.length+1; k++) {
+      for (let k = i+1; k <= arrStr.length; k++) {
         nextPosition = arrStr[k];
-        if (position === "I" && nextPosition === "V" || position === "I" && nextPosition === "X" ||    position === "X" && nextPosition === "L" || position === "X" && nextPosition === "C" || 
-        position === "C" && nextPosition === "D" || position === "C" && nextPosition === "M") {
+        if ( position === "I" && nextPosition === "V" || 
+            position === "I" && nextPosition === "X" ||   
+            position === "X" && nextPosition === "L" || 
+            position === "X" && nextPosition === "C" || 
+            position === "C" && nextPosition === "D" || 
+            position === "C" && nextPosition === "M"
+            ) {
 
-            excepArray.push(position, nextPosition);
-            let exceptStr = excepArray.join("");
+            let exceptStr = `${position}${nextPosition}`
             if(exceptStr in romanNumbersExceptions) {
             outputInt += romanNumbersExceptions[exceptStr];
-            excepArray = [];
             arrStr.shift(position);
           }
           
@@ -66,5 +68,5 @@ const romanToInt = function(s) {
 };
 
 //console.log(romanToInt("XXXL"))
-//console.log(romanToInt("XXIV"))
+//console.log(romanToInt("XXIII"))
 console.log(romanToInt("MCMXCIV"))
